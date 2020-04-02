@@ -21,7 +21,7 @@ class TextArea extends React.Component {
         let text = '';
         switch (type) {
             case 1:
-                text = this.state.text.trim();
+                text = this.state.text.trim().toLocaleLowerCase();
                 this.setState({text: text.substring(0,1).toUpperCase().concat(text.substring(1)) });
                 break;
             case 2:
@@ -104,7 +104,6 @@ class TextArea extends React.Component {
                         <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(2) } >minúscula</Button>
                         <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(3) } >MAIÚSCULA</Button>
                         <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(1) } >Formato frase</Button>
-                        <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(4) } >Formato Maiúcula</Button>
                         <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(4) } >Title Case</Button>
                         <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(5) } >fOrMaTo aLtErNaDo</Button>
                         <Button variant="primary" className="button-textarea" onClick={ () => this.convertTex(7) } >InVeRsE CaSe</Button>
